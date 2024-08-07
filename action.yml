@@ -1,0 +1,21 @@
+name: 'Sphinx Build'
+author: 'Hawai.tech'
+description: Install some requirements and build static html page using sphinx-build. It will copy the build in /data.
+
+inputs:
+  src-root:
+    description: "Root directory of source to build, default: 'docs/source'."
+    required: false
+    default: 'docs/source'
+  build-root:
+    description: "Root directory for build output, default: 'docs/build'."
+    required: false
+    default: 'docs/build'
+
+runs:
+  using: docker
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.source-root }}
+    - ${{ inputs.build-root }}
+    
