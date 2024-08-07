@@ -1,0 +1,23 @@
+name: 'Sphinx-builder'
+description: 'BUild documentation html file using sphinx-build and apidoc automatically'
+inputs:
+  src-root:
+    description: 'The source directory'
+    required: false
+    default: 'docs/source'
+  build-root:  # id of input
+    description: 'The build directory'
+    required: false
+    default: 'docs/build'
+  repo-name:
+    description: 'The repository name'
+    required: false
+    default: ${{ github.repository.name }}
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.src-root }}
+    - ${{ inputs.build-root }}
+    - ${{ inputs.repo-name }}
