@@ -9,13 +9,6 @@ inputs:
     description: 'The build directory'
     required: false
     default: 'docs/build'
-  cp-root:  # id of input
-    description: 'The directory where build files will be copy'
-    required: false
-  repo-name:
-    description: 'The repository name'
-    required: false
-    default: ${{ github.repository.name }}
 
 runs:
   using: 'docker'
@@ -23,5 +16,3 @@ runs:
   args:
     - ${{ inputs.src-root }}
     - ${{ inputs.build-root }}
-    - ${{ inputs.repo-name }}
-    - ${{ inputs.cp-root }}
