@@ -13,8 +13,9 @@ This action install a requirements.txt in `src-root` if their is one. After it w
 **Not Required** The path where is build html files. Default `"/docs/build"`.
 
 ## Example usage
-
+```
 uses: JulesFa/sphinx-build@main
 with:
   src-root: "path-to-src"
   build-root: "path-to-build"
+```
