@@ -1,13 +1,13 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  build-html:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Build html job
     steps:
     - name: checkout
       uses: actions/checkout@v4
-    - name: Hello world action step
+    - name: Sphinx-builder
       uses: JulesFa/sphinx-build@sphinx-builder
       with:
         build-root: "/github/workspace"

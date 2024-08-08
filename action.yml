@@ -9,10 +9,6 @@ inputs:
     description: 'The build directory'
     required: false
     default: 'docs/build'
-  repo-name:
-    description: 'The repository name'
-    required: false
-    default: ${{ github.repository.name }}
 
 runs:
   using: 'docker'
@@ -20,4 +16,3 @@ runs:
   args:
     - ${{ inputs.src-root }}
     - ${{ inputs.build-root }}
-    - ${{ inputs.repo-name }}

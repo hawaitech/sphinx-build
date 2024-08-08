@@ -2,7 +2,6 @@
 
 SOURCE_ROOT=$1
 BUILD_ROOT=$2
-REPO_NAME=$3
 
 mkdir -p $BUILD_ROOT/$GITHUB_REPOSITORY
 
@@ -16,7 +15,4 @@ else
 fi
 
 # TZ is because of bazel issue see https://github.com/nektos/act/issues/1853
-TZ=UTC .venv/bin/sphinx-build -M html $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT/$GITHUB_REPOSITORY
-
-ls $BUILD_ROOT/$GITHUB_REPOSITORY
-ls .
+TZ=UTC .venv/bin/sphinx-build -M html $GITHUB_WORKSPACE/$SOURCE_ROOT $GITHUB_WORKSPACE/$BUILD_ROOT
