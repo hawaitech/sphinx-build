@@ -16,3 +16,6 @@ fi
 
 # TZ is because of bazel issue see https://github.com/nektos/act/issues/1853
 TZ=UTC .venv/bin/sphinx-build -M html $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT
+
+cp $BUILD_ROOT/html/* $BUILD_ROOT
+rm -rf $BUILD_ROOT/html
