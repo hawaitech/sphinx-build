@@ -15,4 +15,4 @@ else
 fi
 
 # TZ is because of bazel issue see https://github.com/nektos/act/issues/1853
-TZ=UTC .venv/bin/sphinx-build -M html $GITHUB_WORKSPACE/$SOURCE_ROOT $GITHUB_WORKSPACE/$BUILD_ROOT
+TZ=UTC .venv/bin/sphinx-build -M html $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT
