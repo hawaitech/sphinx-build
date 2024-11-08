@@ -16,4 +16,4 @@ runs:
   args:
     - ${{ inputs.src-root }}
     - ${{ inputs.build-root }}
-    - ${{ github.ref_name }}
+    - ${{ github.ref }}
