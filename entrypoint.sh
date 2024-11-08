@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
 SOURCE_ROOT=$1
 BUILD_ROOT=$2
 BRANCH_NAME=$3
 
-echo "branch_name = $BRANCH_NAME"
+length=${#BRANCH_NAME}
+echo "branch_name =" 
+echo ${BRANCH_NAME:11:$length}
 mkdir -p $BUILD_ROOT/$GITHUB_REPOSITORY/$BRANCH_NAME
 
 python3 -m venv .venv
@@ -17,4 +19,4 @@ else
 fi
 
 # TZ is because of bazel issue see https://github.com/nektos/act/issues/1853
-TZ=UTC .venv/bin/sphinx-build $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT/$GITHUB_REPOSITORY/$BRANCH_NAME
+TZ=UTC .venv/bin/sphinx-build $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT/$GITHUB_REPOSITORY/${BRANCH_NAME:11:$length}
