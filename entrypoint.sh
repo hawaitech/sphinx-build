@@ -5,17 +5,12 @@ BUILD_ROOT=$2
 BRANCH_NAME=$3
 
 length=${#BRANCH_NAME}
-echo "branch_name =" 
+echo "branch_name ="
+echo ${BRANCH_NAME} 
 echo ${BRANCH_NAME:11:$length}
 mkdir -p $BUILD_ROOT/$GITHUB_REPOSITORY/$BRANCH_NAME
-echo "python version ="
-echo $(python3 --version)
-echo "python version ="
-echo $(python --version)
 python3 -m venv .venv
-echo "python version ="
-echo $(.venv/bin/python3 --version)
-echo "python version ="
+
 echo $(.venv/bin/python --version)
 if [ -f "$SOURCE_ROOT/requirements.txt" ]; then
     echo "Installation of requirements"
