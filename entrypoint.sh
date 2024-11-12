@@ -8,9 +8,15 @@ length=${#BRANCH_NAME}
 echo "branch_name =" 
 echo ${BRANCH_NAME:11:$length}
 mkdir -p $BUILD_ROOT/$GITHUB_REPOSITORY/$BRANCH_NAME
-
+echo "python version ="
+echo $(python3 --version)
+echo "python version ="
+echo $(python --version)
 python3 -m venv .venv
-
+echo "python version ="
+echo $(.venv/bin/python3 --version)
+echo "python version ="
+echo $(.venv/bin/python --version)
 if [ -f "$SOURCE_ROOT/requirements.txt" ]; then
     echo "Installation of requirements"
     .venv/bin/pip install -r $SOURCE_ROOT/requirements.txt
@@ -18,9 +24,5 @@ else
     echo "No installation requirements found"
 fi
 
-echo "python version ="
-echo $(.venv/bin/python3 --version)
-echo "python version ="
-echo $(.venv/bin/python --version)
 # TZ is because of bazel issue see https://github.com/nektos/act/issues/1853
 TZ=UTC .venv/bin/sphinx-build $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT/$GITHUB_REPOSITORY/${BRANCH_NAME:11:$length}
