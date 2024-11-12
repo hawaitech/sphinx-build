@@ -19,6 +19,7 @@ echo "python version ="
 echo $(.venv/bin/python --version)
 if [ -f "$SOURCE_ROOT/requirements.txt" ]; then
     echo "Installation of requirements"
+    .venv/bin/pip install -U sphinx
     .venv/bin/pip install -r $SOURCE_ROOT/requirements.txt
 else
     echo "No installation requirements found"
