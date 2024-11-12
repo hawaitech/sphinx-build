@@ -18,6 +18,9 @@ else
     echo "No installation requirements found"
 fi
 
+echo "python version ="
 echo $(.venv/bin/python3 --version)
+echo "python version ="
+echo $(.venv/bin/python --version)
 # TZ is because of bazel issue see https://github.com/nektos/act/issues/1853
 TZ=UTC .venv/bin/sphinx-build $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT/$GITHUB_REPOSITORY/${BRANCH_NAME:11:$length}
