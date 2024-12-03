@@ -2,7 +2,9 @@
 
 SOURCE_ROOT=$1
 BUILD_ROOT=$2
-
+echo "branch name"
+echo $GITHUB_REF_NAME
+echo "test"
 mkdir -p $BUILD_ROOT/$GITHUB_REPOSITORY
 
 python3 -m venv .venv
