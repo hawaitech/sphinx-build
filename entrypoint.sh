@@ -6,6 +6,7 @@ BRANCH_NAME=$3
 echo "branch name"
 echo $BRANCH_NAME
 echo $GITHUB_REF_NAME
+echo $(python --version)
 mkdir -p $BUILD_ROOT/$GITHUB_REPOSITORY/$BRANCH_NAME
 
 python3 -m venv .venv
