@@ -5,12 +5,11 @@ BUILD_ROOT=$2
 BRANCH_NAME=$3
 
 mkdir -p $BUILD_ROOT/$GITHUB_REPOSITORY/$BRANCH_NAME
-
 python3 -m venv .venv
 
 if [ -f "$SOURCE_ROOT/requirements.txt" ]; then
     echo "Installation of requirements"
-    .venv/bin/pip install -U sphinx # To get a newer version than apt package
+    .venv/bin/pip install -U sphinx
     .venv/bin/pip install -r $SOURCE_ROOT/requirements.txt
 else
     echo "No installation requirements found"
