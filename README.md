@@ -14,7 +14,7 @@ This action install a requirements.txt in `src-root` if their is one. After it w
 
 ## Example usage
 ```
-uses: JulesFa/sphinx-build@main
+uses: hawaitech/sphinx-build@main
 with:
   src-root: "path-to-src"
   build-root: "path-to-build"

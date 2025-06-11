@@ -8,6 +8,6 @@ jobs:
     - name: checkout
       uses: actions/checkout@v4
     - name: Sphinx-builder
-      uses: JulesFa/sphinx-build@sphinx-builder
+      uses: hawaitech/sphinx-build@v3.1
       with:
         build-root: "/github/workspace"
