@@ -10,6 +10,10 @@ mkdir -p $DST_DIR
 export TZ=UTC  # TZ is because of bazel issue see https://github.com/nektos/act/issues/1853
 export PYTHONPATH="/ext:$SOURCE_ROOT/ext"
 
+echo "installing pandoc"
+apt-get update && apt-get install -y pandoc
+
+echo "Setup uv"
 uv venv -p 3.12 .venv
 uv pip install -U sphinx
 
