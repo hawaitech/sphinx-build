@@ -20,4 +20,4 @@ runs:
   args:
     - ${{ inputs.src-root }}
     - ${{ inputs.build-root }}
-    - ${{ inputs.ref_name }}
+    - ${{ inputs.ref-name }}

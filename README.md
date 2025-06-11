@@ -12,6 +12,10 @@ This action install a requirements.txt in `src-root` if their is one. After it w
 
 **Not Required** The path where is build html files. Default `"/docs/build"`.
 
+### `ref-name`
+
+**Not Required** The subdirectory where is build html files. Default `${{ github.ref_name }}`.
+
 ## Example usage
 ```
 uses: hawaitech/sphinx-build@main

@@ -12,7 +12,6 @@ export PYTHONPATH="/ext:$SOURCE_ROOT/ext"
 
 uv venv -p 3.12 .venv
 uv pip install -U sphinx
-python3 -m venv .venv
 
 if [ -f "$SOURCE_ROOT/requirements.txt" ]; then
     echo "Installation of requirements"
