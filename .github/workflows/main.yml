@@ -11,3 +11,4 @@ jobs:
       uses: hawaitech/sphinx-build@v3.1
       with:
         build-root: "/github/workspace"
+        ref_name: ${{ github.ref_name }}
