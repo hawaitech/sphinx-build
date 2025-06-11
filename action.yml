@@ -9,6 +9,10 @@ inputs:
     description: 'The build directory'
     required: false
     default: 'docs/build'
+  ref-name:
+    description: 'The branch name'
+    required: false
+    default: ${{ github.ref_name }}
 
 runs:
   using: 'docker'
