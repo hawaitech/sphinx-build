@@ -16,7 +16,7 @@ else
     UV_WITH=--with sphinx
 fi
 
-UV_CMD=uv run $UV_WITH --no-project sphinx-build $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT/$GITHUB_REPOSITORY/$BRANCH_NAME
+UV_CMD="uv run $UV_WITH --no-project sphinx-build $GITHUB_WORKSPACE/$SOURCE_ROOT $BUILD_ROOT/$GITHUB_REPOSITORY/$BRANCH_NAME"
 
 echo $UV_CMD
 $UV_CMD
